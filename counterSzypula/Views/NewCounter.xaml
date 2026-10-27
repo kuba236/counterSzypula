@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="counterSzypula.Views.NewCounter"
+             Title="NewCounter">
+    <VerticalStackLayout
+        Spacing="5"
+        Margin="10">
+
+        <Grid ColumnDefinitions="*,*,*,*"
+              Margin="10"
+              ColumnSpacing="20"
+              >
+            <Entry
+                Grid.Column="0"
+                Grid.ColumnSpan="2"
+                Text="{Binding Name}"
+                Placeholder="Enter your counter name"
+                MaxLength="30"
+                />
+
+            <Entry 
+                x:Name="StartingPoint"
+                Grid.Column="2"
+                Placeholder="Start Num" />
+
+
+            <Button Grid.Column="3"
+                    Text="Enter"
+                    Clicked="SetStartingValue"/>
+            
+
+        </Grid>
+
+
+        <Grid ColumnDefinitions="*,*,*"
+              ColumnSpacing="4" 
+              Margin="30">
+
+            <Button Grid.Column="0"
+                    Text="Sub"
+                    Clicked="DecrementCounter" />
+
+            <Label
+                  Text="{Binding Count}"
+                   Grid.Column="1"
+                   HorizontalTextAlignment="Center"
+                   VerticalTextAlignment="Center"
+                   FontSize="40"
+                   />
+
+            <Button Grid.Column="2"
+                Text="Add"
+                Clicked="IncrementCounter" />
+
+        </Grid>
+        <Button
+            Text="Save"
+            Clicked="SaveCounter" />
+
+    </VerticalStackLayout>
+</ContentPage>
